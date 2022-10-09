@@ -1,30 +1,44 @@
 <template>
-  <nav>
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
-  </nav>
-  <router-view/>
+  <div class="wrapper">
+    <tur-navbar></tur-navbar>
+    <router-view></router-view>
+  </div>
 </template>
 
+<script>
+export default {
+
+}
+</script>
+
 <style lang="scss">
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
+@import '@/assets/scss/fonts.scss';
+@import '@/assets/scss/nullstyle.scss';
+
+body {
+  font-size: 18px;
+  font-family: 'Open Sans';
+  font-weight: 400;
+  line-height: 1.11;
 }
 
-nav {
-  padding: 30px;
+.wrapper {
+  overflow: hidden;
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
 
-  a {
-    font-weight: bold;
-    color: #2c3e50;
+[class*="__container"] {
+  max-width: 100%;
+  padding: 0 17px;
+  margin: 0 auto;
+}
 
-    &.router-link-exact-active {
-      color: #42b983;
-    }
+@media (min-width: 767.98px) {
+  [class*="__container"] {
+    max-width: 1036px;
+    padding: 0 17px;
   }
 }
 </style>
